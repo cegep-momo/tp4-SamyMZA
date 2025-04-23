@@ -1,12 +1,12 @@
-from model import platine
-from model import mesure
-from view import view
+from model.platine import Platine
+from model.mesure import Mesure
+from view.view import View
 
 class controler:
     def __init__(self):
-        self.platine = platine()
-        self.mesure = mesure()
-        self.view = view()
+        self.platine = Platine()
+        self.mesure = Mesure()
+        self.view = View()
 
     def demarrer(self):
         while True:
