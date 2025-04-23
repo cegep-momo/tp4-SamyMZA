@@ -1,4 +1,5 @@
-from controler import controler
+from controler.controler import controler
 
-controler = controler()
-controler.demarrer()
+controleur = controler()
+
+controleur.demarrer()

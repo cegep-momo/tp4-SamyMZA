@@ -2,7 +2,7 @@ from model import platine
 from model import mesure
 from view import view
 
-class Controleur:
+class controler:
     def __init__(self):
         self.platine = platine()
         self.mesure = mesure()
