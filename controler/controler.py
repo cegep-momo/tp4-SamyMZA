@@ -8,14 +8,25 @@ class controler:
         self.view = View()
 
     def demarrer(self):
+        
+        self.view.afficher_message("Attente de demmarrage")
         while True:
             if self.platine.bouton_demarrer.is_pressed:
+                
                 self.view.afficher_message("Mesure en cours...")
-                while True:
+                
+                while not self.platine.bouton_stop.is_pressed:
+                    
+                    
+                    distance = self.platine.capteur.distance * 100
+                    self.view.afficher_mesure(f"Mesure {distance}")
+                    
+                    
                     if self.platine.bouton_demarrer.is_pressed:
-                        distance = self.platine.capteur.distance * 100
-                        self.view.afficher_mesure(f"Mesure {distance}")
-                        # Mesure(distance)
-                    if self.platine.bouton_stop.is_pressed:
-                        self.view.afficher_message("Mesure arrete.")
-                        break       
+                        mes = Mesure(distance)
+                        mes.sauvegarderJson()
+                        break
+                        
+            if self.platine.bouton_stop.is_pressed:
+                self.view.afficher_message("Mesure arrete.")
+                break      

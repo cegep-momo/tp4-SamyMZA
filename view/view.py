@@ -13,5 +13,5 @@ class View:
     def afficher_mesure(self, mesure):
         LCD1602.clear()
         LCD1602.write(1,1,mesure)
-        sleep(0.1)
+        sleep(5)
         LCD1602.clear()
